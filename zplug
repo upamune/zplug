@@ -726,7 +726,7 @@ __zplug::install()
     fi
 
     for line in "${args[@]}"; do
-        [[ -d $ZPLUG_HOME/repos/$line ]] || let fail++
+        [[ -e $ZPLUG_HOME/repos/$line ]] || let fail++
     done
     if [[ $fail -eq 0 ]]; then
         __put "\033[;1m ==> Installed all plugins to $ZPLUG_HOME/repos, successfully!\033[m\n"
